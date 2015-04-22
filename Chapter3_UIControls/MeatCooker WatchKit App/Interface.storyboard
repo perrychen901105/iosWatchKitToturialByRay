@@ -8,7 +8,7 @@
         <!--Meat Cook-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="InitialController" title="Meat Cook" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MeatCooker_WatchKit_App" customModuleProvider="target">
+                <controller identifier="InitialController" title="Meat Cook" spacing="10" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MeatCooker_WatchKit_App" customModuleProvider="target">
                     <items>
                         <group width="1" alignment="left" layout="vertical" id="Jo9-ZX-F05">
                             <items>
@@ -23,9 +23,46 @@
                                 </button>
                             </items>
                         </group>
+                        <label alignment="center" text="Weight: 16 oz" id="O7W-uj-G3c"/>
+                        <group width="1" alignment="left" spacing="20" id="Nea-zB-Xfp">
+                            <items>
+                                <button alignment="center" backgroundImage="minus" id="I63-Lr-O0n">
+                                    <connections>
+                                        <action selector="onMinusButton" destination="AgC-eL-Hgc" id="u4M-bY-5ax"/>
+                                    </connections>
+                                </button>
+                                <button alignment="center" backgroundImage="plus" id="Kcj-bx-fyt">
+                                    <connections>
+                                        <action selector="onPlusButton" destination="AgC-eL-Hgc" id="VTq-C6-yb1"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" id="lAz-23-gVu">
+                            <items>
+                                <label alignment="left" text="Label" id="td0-WB-6lB"/>
+                                <slider width="1" alignment="left" value="2" maximum="3" steps="3" id="gyd-p5-ZA7">
+                                    <connections>
+                                        <action selector="onTempChange:" destination="AgC-eL-Hgc" id="CqT-iZ-fNv"/>
+                                    </connections>
+                                </slider>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="3C8-ki-oz2">
+                            <items>
+                                <switch width="1" alignment="left" title="Metric" id="cgO-x5-Idc">
+                                    <connections>
+                                        <action selector="onMetricChanged:" destination="AgC-eL-Hgc" id="OGU-EM-Sr4"/>
+                                    </connections>
+                                </switch>
+                            </items>
+                        </group>
                     </items>
                     <connections>
+                        <outlet property="cookLabel" destination="td0-WB-6lB" id="vDE-aK-DCy"/>
                         <outlet property="timer" destination="LEr-X8-QGB" id="pL1-yY-tjY"/>
+                        <outlet property="timerButton" destination="9oa-Ie-JTE" id="0pV-sq-sUn"/>
+                        <outlet property="weightLabel" destination="O7W-uj-G3c" id="tHe-Nm-ePE"/>
                     </connections>
                 </controller>
             </objects>

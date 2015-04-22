@@ -18,6 +18,7 @@
 		2974FB161A3E893800AB4837 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2974FB151A3E893800AB4837 /* Interface.storyboard */; };
 		2974FB181A3E893800AB4837 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2974FB171A3E893800AB4837 /* Images.xcassets */; };
 		2974FB1B1A3E893800AB4837 /* MeatCooker WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2974FB041A3E893700AB4837 /* MeatCooker WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C26381891AE76D390079D467 /* MeatTemperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26381881AE76D390079D467 /* MeatTemperature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		2974FB141A3E893800AB4837 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2974FB151A3E893800AB4837 /* Interface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
 		2974FB171A3E893800AB4837 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C26381881AE76D390079D467 /* MeatTemperature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeatTemperature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				2974FB081A3E893700AB4837 /* InterfaceController.swift */,
+				C26381881AE76D390079D467 /* MeatTemperature.swift */,
 				2974FB0A1A3E893700AB4837 /* Images.xcassets */,
 				2974FB061A3E893700AB4837 /* Supporting Files */,
 			);
@@ -305,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2974FB091A3E893700AB4837 /* InterfaceController.swift in Sources */,
+				C26381891AE76D390079D467 /* MeatTemperature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
