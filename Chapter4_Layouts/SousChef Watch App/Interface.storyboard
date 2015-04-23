@@ -44,7 +44,7 @@
                     <edgeInsets key="margins" left="0.0" right="0.0" top="15" bottom="0.0"/>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="140" y="236"/>
+            <point key="canvasLocation" x="231" y="277"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.10588235294117647" green="0.60784313725490191" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
