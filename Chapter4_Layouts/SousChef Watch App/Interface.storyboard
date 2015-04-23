@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+    </dependencies>
+    <scenes>
+        <!--Initial Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller spacing="20" id="AgC-eL-Hgc" customClass="InitialInterfaceController" customModule="SousChef_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" spacing="5" id="0x7-nv-3o5">
+                            <items>
+                                <imageView alignment="center" verticalAlignment="center" image="rw-circle" id="N3K-Ut-NVZ"/>
+                                <label alignment="center" verticalAlignment="center" text="SousChef" id="l8Y-5r-8Rr"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" spacing="15" id="JWb-MR-ibr">
+                            <items>
+                                <button alignment="center" id="0cM-jZ-QAA">
+                                    <group key="contentGroup" alignment="left" layout="vertical" id="WkZ-X1-zY5">
+                                        <items>
+                                            <imageView alignment="center" image="bookmark-button" id="SBt-E7-PmE"/>
+                                            <label alignment="center" text="Recipes" id="IRb-U5-qt7">
+                                                <fontDescription key="font" type="system" pointSize="11"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                </button>
+                                <button alignment="center" id="5KY-5p-Xdy">
+                                    <group key="contentGroup" alignment="left" layout="vertical" id="p4L-xt-ei8">
+                                        <items>
+                                            <imageView alignment="center" image="ingredients" id="IE4-Ne-SIh"/>
+                                            <label alignment="center" text="Groceries" id="Rse-vV-03L">
+                                                <fontDescription key="font" type="system" pointSize="11"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="15" bottom="0.0"/>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="140" y="236"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.10588235294117647" green="0.60784313725490191" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+</document>
