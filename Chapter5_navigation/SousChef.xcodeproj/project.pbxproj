@@ -53,6 +53,9 @@
 		29C1D33F1A2591CD00A72B5B /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C1D32E1A2591CD00A72B5B /* UIImageView+WebCache.m */; };
 		29C1D3401A2591CD00A72B5B /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C1D3301A2591CD00A72B5B /* UIView+WebCacheOperation.m */; };
 		29D973211A45FA15002B6D90 /* InitialInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D973201A45FA15002B6D90 /* InitialInterfaceController.swift */; };
+		C249C90B1AEA336F0062D6DD /* RecipeRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C249C90A1AEA336F0062D6DD /* RecipeRowController.swift */; };
+		C249C90D1AEA39720062D6DD /* RecipesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C249C90C1AEA39720062D6DD /* RecipesInterfaceController.swift */; };
+		C249C90F1AEA41C10062D6DD /* RecipeDetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C249C90E1AEA41C10062D6DD /* RecipeDetailInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +175,9 @@
 		29C1D3301A2591CD00A72B5B /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		29C1D3471A25924200A72B5B /* SousChef-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SousChef-Bridging-Header.h"; sourceTree = "<group>"; };
 		29D973201A45FA15002B6D90 /* InitialInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InitialInterfaceController.swift; path = "SousChef WatchKit Extension/InitialInterfaceController.swift"; sourceTree = SOURCE_ROOT; };
+		C249C90A1AEA336F0062D6DD /* RecipeRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeRowController.swift; sourceTree = "<group>"; };
+		C249C90C1AEA39720062D6DD /* RecipesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesInterfaceController.swift; sourceTree = "<group>"; };
+		C249C90E1AEA41C10062D6DD /* RecipeDetailInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				29D973201A45FA15002B6D90 /* InitialInterfaceController.swift */,
+				C249C90C1AEA39720062D6DD /* RecipesInterfaceController.swift */,
+				C249C90E1AEA41C10062D6DD /* RecipeDetailInterfaceController.swift */,
 			);
 			name = "Interface Controllers";
 			path = "../SousChef Watch App";
@@ -451,6 +459,7 @@
 		29FEC0761A2A8C4900684D80 /* Row Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C249C90A1AEA336F0062D6DD /* RecipeRowController.swift */,
 			);
 			name = "Row Controllers";
 			sourceTree = "<group>";
@@ -675,7 +684,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C249C90F1AEA41C10062D6DD /* RecipeDetailInterfaceController.swift in Sources */,
+				C249C90B1AEA336F0062D6DD /* RecipeRowController.swift in Sources */,
 				29D973211A45FA15002B6D90 /* InitialInterfaceController.swift in Sources */,
+				C249C90D1AEA39720062D6DD /* RecipesInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,41 +15,86 @@
         <!--Recipes-->
         <scene sceneID="JmC-e5-cHV">
             <objects>
-                <controller title="Recipes" id="Yvt-89-wNo">
+                <controller title="Recipes" id="Yvt-89-wNo" customClass="RecipesInterfaceController" customModule="SousChef_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="gQf-ZO-Cbx">
                             <items>
-                                <tableRow id="x6e-94-c3G">
-                                    <group key="rootItem" width="1" alignment="left" id="vY7-JB-OL8"/>
+                                <tableRow identifier="RecipeRowType" id="x6e-94-c3G" customClass="RecipeRowController" customModule="SousChef_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="vY7-JB-OL8">
+                                        <items>
+                                            <label alignment="left" text="Label" id="NQn-Em-XlY"/>
+                                        </items>
+                                    </group>
                                     <connections>
+                                        <outlet property="textLabel" destination="NQn-Em-XlY" id="Ikc-DX-sXm"/>
                                         <segue destination="OW9-qv-eBP" kind="push" id="1Pj-ww-jG5"/>
                                     </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
+                    <connections>
+                        <outlet property="table" destination="gQf-ZO-Cbx" id="n7k-tJ-Cjc"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="414" y="-250"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Directions-->
         <scene sceneID="nsq-7p-oSg">
             <objects>
-                <controller id="Vva-zA-zai"/>
+                <controller title="Directions" id="Vva-zA-zai"/>
             </objects>
             <point key="canvasLocation" x="735" y="-303"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Detail-->
         <scene sceneID="phq-ag-zeb">
             <objects>
-                <controller id="OW9-qv-eBP"/>
+                <controller title="Detail" id="OW9-qv-eBP" customClass="RecipeDetailInterfaceController" customModule="SousChef_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="Label" textAlignment="center" numberOfLines="0" id="lnB-iD-bKA"/>
+                        <group width="1" alignment="left" spacing="15" id="CnV-ov-kFG">
+                            <items>
+                                <button alignment="center" id="00W-4x-amf">
+                                    <group key="contentGroup" height="58" alignment="left" layout="vertical" id="Qn7-KV-l0x">
+                                        <items>
+                                            <imageView alignment="center" image="ingredients" id="idx-8L-xvy"/>
+                                            <label alignment="center" text="Ingredients" id="g7N-73-c6h">
+                                                <fontDescription key="font" type="system" pointSize="11"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <segue destination="8OH-89-qEE" kind="push" id="Ppw-hM-wFW"/>
+                                    </connections>
+                                </button>
+                                <button alignment="center" id="D9J-aI-JMv">
+                                    <group key="contentGroup" alignment="left" layout="vertical" id="xvC-T4-nm3">
+                                        <items>
+                                            <imageView alignment="center" image="directions" id="Zds-Qc-YC1"/>
+                                            <label alignment="center" text="Directions" id="O4I-Za-3sP">
+                                                <fontDescription key="font" type="system" pointSize="11"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <segue destination="Vva-zA-zai" kind="push" id="OlD-OO-mwG"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="nameLabel" destination="lnB-iD-bKA" id="wvI-nO-yYH"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="580" y="-250"/>
+            <point key="canvasLocation" x="587" y="-250"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Ingredients-->
         <scene sceneID="EJs-2o-EOK">
             <objects>
-                <controller id="8OH-89-qEE"/>
+                <controller title="Ingredients" id="8OH-89-qEE"/>
             </objects>
             <point key="canvasLocation" x="735" y="-73"/>
         </scene>
