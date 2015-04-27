@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
     </dependencies>
     <scenes>
@@ -60,15 +60,20 @@
                         <table alignment="left" id="bUI-sU-t2G">
                             <items>
                                 <tableRow identifier="RecipeRowType" id="k7i-gj-dFK" customClass="RecipeRowController" customModule="SousChef_WatchKit_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="1iF-5p-JYs">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="1iF-5p-JYs">
                                         <items>
-                                            <label alignment="left" text="Label" id="9cB-Tg-ogF"/>
+                                            <label alignment="left" text="Label" numberOfLines="0" id="9cB-Tg-ogF"/>
+                                            <label alignment="left" text="Label" id="p7q-mQ-JXX">
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
                                         </items>
                                         <connections>
                                             <segue destination="b0K-ud-FKx" kind="push" id="QXz-YQ-1kQ"/>
                                         </connections>
                                     </group>
                                     <connections>
+                                        <outlet property="ingredientsLabel" destination="p7q-mQ-JXX" id="q2h-Hw-N6D"/>
                                         <outlet property="textLabel" destination="9cB-Tg-ogF" id="aLc-u9-mnK"/>
                                     </connections>
                                 </tableRow>
@@ -85,7 +90,7 @@
         <!--Recipe Detail Interface Controller-->
         <scene sceneID="F9a-el-BVP">
             <objects>
-                <controller id="b0K-ud-FKx" customClass="RecipeDetailInterfaceController" customModule="SousChef_WatchKit_Extension">
+                <controller spacing="10" id="b0K-ud-FKx" customClass="RecipeDetailInterfaceController" customModule="SousChef_WatchKit_Extension">
                     <items>
                         <label alignment="center" text="Label" textAlignment="center" numberOfLines="0" id="5sV-AM-S5v"/>
                         <group width="1" alignment="left" spacing="15" id="uwQ-EZ-EBQ">
@@ -129,14 +134,63 @@
         <!--Ingredients-->
         <scene sceneID="obA-Rr-Nc2">
             <objects>
-                <controller title="Ingredients" id="My8-qM-YdQ"/>
+                <controller title="Ingredients" id="My8-qM-YdQ" customClass="RecipeIngredientsInterfaceController" customModule="SousChef_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="f3a-5Z-2QK">
+                            <items>
+                                <tableRow identifier="IngredientRow" id="QED-w2-9QW" customClass="IngredientRowController" customModule="SousChef_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="eJ6-8x-QZw">
+                                        <items>
+                                            <label alignment="left" text="Fresh Pepper" numberOfLines="0" id="khf-eJ-acO"/>
+                                            <label alignment="left" text="1 tsp" id="PGD-Rj-QWq">
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="measurementLabel" destination="PGD-Rj-QWq" id="XUo-3D-ADB"/>
+                                        <outlet property="nameLabel" destination="khf-eJ-acO" id="8Yr-ic-YcS"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="f3a-5Z-2QK" id="wkR-mP-Afg"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="848" y="318"/>
         </scene>
         <!--Directions-->
         <scene sceneID="t0a-HS-Xdr">
             <objects>
-                <controller title="Directions" id="CDS-Yr-cZl"/>
+                <controller title="Directions" id="CDS-Yr-cZl" customClass="RecipeDirectionsInterfaceController" customModule="SousChef_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="WKy-hK-PUx">
+                            <items>
+                                <tableRow identifier="StepRow" id="koc-Nm-ji9" customClass="StepRowController" customModule="SousChef_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="5Nh-o6-QYR">
+                                        <items>
+                                            <label alignment="left" text="Label" id="yTl-dS-ikO">
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
+                                            <label alignment="left" text="Label" numberOfLines="0" id="Zf6-gG-gQ0"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="directionsLabel" destination="Zf6-gG-gQ0" id="uG9-vG-z54"/>
+                                        <outlet property="stepLabel" destination="yTl-dS-ikO" id="uvP-L8-6DW"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="WKy-hK-PUx" id="AsU-OO-M9I"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="849" y="77"/>
         </scene>

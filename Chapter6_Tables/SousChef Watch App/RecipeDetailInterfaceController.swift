@@ -22,16 +22,21 @@
 
 import Foundation
 import WatchKit
+import SousChefKit
 
 class RecipeDetailInterfaceController: WKInterfaceController {
   @IBOutlet weak var nameLabel: WKInterfaceLabel!
 
+  var recipe: Recipe?
+  
   override func awakeWithContext(context: AnyObject?) {
     super.awakeWithContext(context)
-
-    if let name = context as? String {
-      nameLabel.setText(name)
-    }
+    recipe = context as? Recipe
+    nameLabel.setText(recipe?.name)
+    
   }
 
+  override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
+    return recipe
+  }
 }
