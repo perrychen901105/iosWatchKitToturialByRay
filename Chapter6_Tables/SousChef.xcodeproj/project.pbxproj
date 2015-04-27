@@ -60,6 +60,9 @@
 		C22AAFDB1AEE0FC8003791A9 /* StepRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22AAFDA1AEE0FC8003791A9 /* StepRowController.swift */; };
 		C22AAFDD1AEE10BB003791A9 /* RecipeIngredientsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22AAFDC1AEE10BB003791A9 /* RecipeIngredientsInterfaceController.swift */; };
 		C22AAFDF1AEE1829003791A9 /* RecipeDirectionsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22AAFDE1AEE1829003791A9 /* RecipeDirectionsInterfaceController.swift */; };
+		C22AAFE11AEE1F78003791A9 /* GroceryTypeRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22AAFE01AEE1F78003791A9 /* GroceryTypeRowController.swift */; };
+		C22AAFE31AEE204E003791A9 /* GroceryRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22AAFE21AEE204E003791A9 /* GroceryRowController.swift */; };
+		C22AAFE51AEE2119003791A9 /* GroceryInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22AAFE41AEE2119003791A9 /* GroceryInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,6 +189,9 @@
 		C22AAFDA1AEE0FC8003791A9 /* StepRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepRowController.swift; sourceTree = "<group>"; };
 		C22AAFDC1AEE10BB003791A9 /* RecipeIngredientsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeIngredientsInterfaceController.swift; sourceTree = "<group>"; };
 		C22AAFDE1AEE1829003791A9 /* RecipeDirectionsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDirectionsInterfaceController.swift; sourceTree = "<group>"; };
+		C22AAFE01AEE1F78003791A9 /* GroceryTypeRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryTypeRowController.swift; sourceTree = "<group>"; };
+		C22AAFE21AEE204E003791A9 /* GroceryRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryRowController.swift; sourceTree = "<group>"; };
+		C22AAFE41AEE2119003791A9 /* GroceryInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +229,7 @@
 				784DFF9F1A93CF6C0025DE34 /* RecipeDetailInterfaceController.swift */,
 				C22AAFDC1AEE10BB003791A9 /* RecipeIngredientsInterfaceController.swift */,
 				C22AAFDE1AEE1829003791A9 /* RecipeDirectionsInterfaceController.swift */,
+				C22AAFE41AEE2119003791A9 /* GroceryInterfaceController.swift */,
 			);
 			name = "Interface Controllers";
 			path = "../SousChef Watch App";
@@ -472,6 +479,8 @@
 				784DFF9B1A93CA7F0025DE34 /* RecipeRowController.swift */,
 				C22AAFD81AEE0CBF003791A9 /* IngredientRowController.swift */,
 				C22AAFDA1AEE0FC8003791A9 /* StepRowController.swift */,
+				C22AAFE01AEE1F78003791A9 /* GroceryTypeRowController.swift */,
+				C22AAFE21AEE204E003791A9 /* GroceryRowController.swift */,
 			);
 			name = "Row Controllers";
 			sourceTree = "<group>";
@@ -696,7 +705,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C22AAFE31AEE204E003791A9 /* GroceryRowController.swift in Sources */,
 				C22AAFDB1AEE0FC8003791A9 /* StepRowController.swift in Sources */,
+				C22AAFE11AEE1F78003791A9 /* GroceryTypeRowController.swift in Sources */,
+				C22AAFE51AEE2119003791A9 /* GroceryInterfaceController.swift in Sources */,
 				784DFFA01A93CF6C0025DE34 /* RecipeDetailInterfaceController.swift in Sources */,
 				784DFF9C1A93CA7F0025DE34 /* RecipeRowController.swift in Sources */,
 				29D973211A45FA15002B6D90 /* InitialInterfaceController.swift in Sources */,

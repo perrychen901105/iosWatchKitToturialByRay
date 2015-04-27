@@ -197,7 +197,56 @@
         <!--Groceries-->
         <scene sceneID="Caa-rk-oSX">
             <objects>
-                <controller title="Groceries" id="IFD-E8-9sZ"/>
+                <controller title="Groceries" id="IFD-E8-9sZ" customClass="GroceryInterfaceController" customModule="SousChef_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="shO-Wz-GCl">
+                            <items>
+                                <tableRow identifier="GroceryTypeRow" id="pIU-Sl-C44" customClass="GroceryTypeRowController" customModule="SousChef_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="UbW-Id-fsO">
+                                        <items>
+                                            <imageView alignment="left" verticalAlignment="center" image="meat" id="Czi-YK-1Jc"/>
+                                            <label alignment="left" verticalAlignment="center" text="Type" id="aO1-Tw-wJG">
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="IMAGE" destination="Czi-YK-1Jc" id="CZo-Bf-eW1"/>
+                                        <outlet property="textLabel" destination="aO1-Tw-wJG" id="ylX-LW-UkW"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="GroceryRow" id="Cka-8k-LUo" customClass="GroceryRowController" customModule="SousChef_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="GmQ-32-PD3">
+                                        <items>
+                                            <label alignment="left" text="Ingredient" numberOfLines="0" id="GWb-ck-nvu"/>
+                                            <group width="1" alignment="left" id="Rl0-Ef-jI3">
+                                                <items>
+                                                    <label alignment="left" text="2 tbsp" id="oip-GG-jV2">
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                    </label>
+                                                    <label alignment="right" text="x3" id="olu-tA-8cc">
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="measurementLabel" destination="oip-GG-jV2" id="CDa-JV-GhY"/>
+                                        <outlet property="quantityLabel" destination="olu-tA-8cc" id="7I2-Jd-E0b"/>
+                                        <outlet property="textLabel" destination="GWb-ck-nvu" id="fpI-TA-eH5"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="shO-Wz-GCl" id="oKA-en-UQE"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="455" y="478"/>
         </scene>
