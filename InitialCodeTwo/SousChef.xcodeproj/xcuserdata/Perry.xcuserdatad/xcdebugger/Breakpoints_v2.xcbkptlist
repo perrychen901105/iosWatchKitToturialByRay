@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SousChefKit/Storage/RecipeStore.swift"
+            timestampString = "451902415.340912"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "refresh(completion:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SousChefKit/Storage/RecipeStore.swift"
+            timestampString = "451902430.534806"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "refresh(completion:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SousChefKit/Storage/RecipeStore.swift"
+            timestampString = "451902433.084414"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "refresh(completion:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SousChefKit.RecipeStore.(refresh (SousChefKit.RecipeStore) -&gt; (completion : Swift.Optional&lt;(recipes : Swift.Array&lt;SousChefKit.Recipe&gt;, error : Swift.Optional&lt;ObjectiveC.NSError&gt;) -&gt; ()&gt;) -&gt; ()).(closure #1)"
+                  moduleName = "SousChefKit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Perry/Project/MyProject/iosWatchKitToturialByRay/Chapter8_ShareData/SousChefKit/Storage/RecipeStore.swift"
+                  timestampString = "451902433.087792"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "136"
+                  endingLineNumber = "136"
+                  offsetFromSymbolStart = "508">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SousChefKit.RecipeStore.(refresh (SousChefKit.RecipeStore) -&gt; (completion : Swift.Optional&lt;(recipes : Swift.Array&lt;SousChefKit.Recipe&gt;, error : Swift.Optional&lt;ObjectiveC.NSError&gt;) -&gt; ()&gt;) -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "SousChefKit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Perry/Project/MyProject/iosWatchKitToturialByRay/Chapter8_ShareData/SousChefKit/Storage/RecipeStore.swift"
+                  timestampString = "451902433.087986"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "137"
+                  endingLineNumber = "137"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
