@@ -233,7 +233,7 @@
         <!--Groceries-->
         <scene sceneID="Caa-rk-oSX">
             <objects>
-                <controller title="Groceries" id="IFD-E8-9sZ" customClass="GroceryInterfaceController" customModule="SousChef_WatchKit_Extension">
+                <controller identifier="GroceryController" title="Groceries" id="IFD-E8-9sZ" customClass="GroceryInterfaceController" customModule="SousChef_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="sWz-AP-1Ic">
                             <items>

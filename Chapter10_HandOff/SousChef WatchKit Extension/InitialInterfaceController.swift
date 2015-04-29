@@ -24,5 +24,14 @@ import WatchKit
 import SousChefKit
 
 class InitialInterfaceController: WKInterfaceController {
-   
+  override func handleUserActivity(userInfo: [NSObject : AnyObject]?) {
+    println("Received a Handoff payload: \(userInfo)")
+    if let version = userInfo![kHandoffVersionKey] as? String {
+      if version == kHandoffVersionNumber {
+        if let nextItem = userInfo![kGlanceHandoffNextItemKey] as? String {
+          self.pushControllerWithName("GroceryController", context: nextItem)
+        }
+      }
+    }
+  }
 }
