@@ -19,6 +19,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     updateRecipesController()
   }
   
+//  func application(application: UIApplication,
+//    handleWatchKitExtensionRequest userInfo:
+//    [NSObject : AnyObject]!,
+//    reply: (([NSObject : AnyObject]!) -> Void)!) {
+//      let kGroceryUpdateRequest =
+//      "com.raywenderlich.update-recipes"
+//      if let updateRecipesRequest =
+//        userInfo[kGroceryUpdateRequest] as? Bool {
+//          updateRecipesWithRemoteServerWithCompletionBlock {
+//            (Void) -> Void in
+//            reply(nil)
+//          }
+//      }
+//  }
+  
+  func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]!) -> Void)!) {
+    let kGroceryUpdateRequest =
+    "com.raywenderlich.update-recipes"
+    if let userInfo = userInfo as [NSObject : AnyObject]! {
+      if let updateRecipesRequest =
+        userInfo[kGroceryUpdateRequest] as? String {
+          println("\(updateRecipesRequest)")
+          updateRecipesWithRemoteServerWithCompletionBlock {
+            (Void) -> Void in
+            reply(["hello": updateRecipesRequest])
+          }
+      }
+    }
+    
+  }
+  
   // MARK: - Updates
   
   func updateRecipesWithRemoteServerWithCompletionBlock(block:((Void) -> Void)?) {

@@ -73,11 +73,18 @@ class RecipesInterfaceController: WKInterfaceController {
     super.willActivate()
     // 1
     let kGroceryUpdateRequest = "com.raywenderlich.update-recipes"
-    let requestInfo: [NSObject: AnyObject] = [kGroceryUpdateRequest: true]
-    WKInterfaceController.openParentApplication(requestInfo, reply: { (replyInfo: [NSObject: AnyObject]!, error: NSError!) -> Void in
-      // 2.
+    let requestInfo: [NSObject: AnyObject] = [kGroceryUpdateRequest: "good"]
+//    WKInterfaceController.openParentApplication(requestInfo, reply: { (replyInfo: [NSObject: AnyObject]!, error: NSError!) -> Void in
+//      // 2.
+//      self.updateTable()
+//    })
+    WKInterfaceController.openParentApplication(requestInfo){
+      (replyInfo: [NSObject: AnyObject]!, error: NSError!) ->
+      Void in
+      // 2
+      println("\(replyInfo)")
       self.updateTable()
-    })
+    }
   }
   
 }

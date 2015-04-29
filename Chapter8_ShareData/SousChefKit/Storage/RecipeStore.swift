@@ -146,6 +146,8 @@ public class RecipeStore {
     var sharedContainerURL: NSURL? =
     NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(kAppGroupIdentifier)
 
+    println("the container url is \(sharedContainerURL)")
+    
     var docURL = NSURL()
     if let sharedContainerURL = sharedContainerURL {
       docURL = sharedContainerURL.URLByAppendingPathComponent("\(kRecipesFileName).\(kRecipesFileExtension)")
