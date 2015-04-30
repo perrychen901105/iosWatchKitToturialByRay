@@ -77,6 +77,32 @@
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
+        <!--TimerScheduler-->
+        <scene sceneID="b0P-zd-BsG">
+            <objects>
+                <controller identifier="TimerScheduler" id="Kgl-Xq-MH2" customClass="TimerSchedulerInterfaceController" customModule="SousChef_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" verticalAlignment="center" text="&lt;message&gt;" numberOfLines="0" id="GSX-by-IJa">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <button width="1" alignment="center" verticalAlignment="center" title="Start" id="aKf-xc-YBl">
+                            <connections>
+                                <action selector="startButtonTapped" destination="Kgl-Xq-MH2" id="Ccp-a2-gdR"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="center" verticalAlignment="center" title="Cancel" id="OS9-re-yJS">
+                            <connections>
+                                <action selector="cancelButtonTapped" destination="Kgl-Xq-MH2" id="jtt-Nh-JoA"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="messageLabel" destination="GSX-by-IJa" id="OiJ-Gj-ssI"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="323" y="-194"/>
+        </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="p4U-Bj-MVZ">
             <objects>
@@ -218,7 +244,7 @@
         <!--Directions-->
         <scene sceneID="t0a-HS-Xdr">
             <objects>
-                <controller title="Directions" id="CDS-Yr-cZl" customClass="RecipeDirectionsInterfaceController" customModule="SousChef_WatchKit_Extension">
+                <controller identifier="RecipeDirections" title="Directions" id="CDS-Yr-cZl" customClass="RecipeDirectionsInterfaceController" customModule="SousChef_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="Ur9-vp-Vwk">
                             <items>

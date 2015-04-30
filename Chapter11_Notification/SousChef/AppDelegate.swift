@@ -35,20 +35,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //  }
   
   func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]!) -> Void)!) {
-    let kGroceryUpdateRequest =
-    "com.raywenderlich.update-recipes"
+    
     if let userInfo = userInfo as [NSObject : AnyObject]! {
-      if let updateRecipesRequest =
-        userInfo[kGroceryUpdateRequest] as? String {
-          println("\(updateRecipesRequest)")
-          updateRecipesWithRemoteServerWithCompletionBlock {
-            (Void) -> Void in
-            reply(["hello": updateRecipesRequest])
+      if let category = userInfo["category"] as? String {
+        // 2
+        if ((application.currentUserNotificationSettings().types & UIUserNotificationType.Alert) != nil) && category == "timer" {
+          scheduleTimerNotificationWithUserInfo(userInfo)
+          if (reply != nil) {
+            reply(nil)
           }
+        }
+      } else {
+        let kGroceryUpdateRequest =
+        "com.raywenderlich.update-recipes"
+        if let updateRecipesRequest =
+          userInfo[kGroceryUpdateRequest] as? String {
+            println("\(updateRecipesRequest)")
+            updateRecipesWithRemoteServerWithCompletionBlock {
+              (Void) -> Void in
+              reply(["hello": updateRecipesRequest])
+            }
+        }
       }
     }
     
   }
+  
   
   // MARK: - Updates
   
