@@ -159,6 +159,7 @@
             <objects>
                 <controller spacing="20" id="b0K-ud-FKx" customClass="RecipeDetailInterfaceController" customModule="SousChef_WatchKit_Extension">
                     <items>
+                        <group width="1" height="60" alignment="left" contentMode="scaleAspectFill" layout="vertical" id="r1l-aC-2Bb"/>
                         <label alignment="center" text="Label" textAlignment="center" numberOfLines="0" id="5sV-AM-S5v"/>
                         <group width="1" alignment="left" spacing="15" id="uwQ-EZ-EBQ">
                             <items>

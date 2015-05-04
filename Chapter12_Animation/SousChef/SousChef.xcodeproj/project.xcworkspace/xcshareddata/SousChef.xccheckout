@@ -14,11 +14,11 @@
 		<string>https://github.com/perrychen901105/iosWatchKitToturialByRay.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Chapter11_Notification/SousChef.xcodeproj</string>
+	<string>Chapter12_Animation/SousChef/SousChef.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>48D98D91602CEBE66CEDC789D7252D473A995C50</key>
-		<string>../../..</string>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/perrychen901105/iosWatchKitToturialByRay.git</string>
