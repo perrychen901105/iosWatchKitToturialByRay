@@ -8,7 +8,7 @@ class RecipeDetailInterfaceController: WKInterfaceController {
 
     @IBOutlet weak var nameGroup: WKInterfaceGroup!
   @IBOutlet weak var nameLabel: WKInterfaceLabel!
-
+ 
   override func awakeWithContext(context: AnyObject?) {
     super.awakeWithContext(context)
 
