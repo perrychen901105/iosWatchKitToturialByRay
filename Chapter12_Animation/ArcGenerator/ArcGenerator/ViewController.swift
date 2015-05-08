@@ -36,8 +36,20 @@ class ViewController: UIViewController {
     // 4
     generator.generateArcAnimationFrames(animation)
     
+    animation = ArcAnimation.progressArcAnimation()
+    animation.totalFrames = 100
+    animation.name = "progressCyan"
+    animation.initialArc = Arc(radius: radius - (width + gap), lineWidth: width, padding: width + gap, startAngle: 3.0 * M_PI / 2.0, endAngle: 3.0 * M_PI / 2.0, clockwise: true, color: UIColor.cyanColor())
+    animation.initialArc.emptyArcColor = UIColor.cyanColor().colorWithAlphaComponent(0.3)
+    generator.generateArcAnimationFrames(animation)
     
-    
+    animation = ArcAnimation.progressArcAnimation()
+    animation.totalFrames = 100
+    animation.name = "progreessGreen"
+    animation.initialArc = Arc(radius: radius - (width + gap) * 2, lineWidth: width, padding: (width + gap) * 2, startAngle: 3.0 * M_PI / 2.0, endAngle: 3.0 * M_PI / 2.0, clockwise: true, color: UIColor.greenColor())
+    animation.initialArc.emptyArcColor = UIColor.greenColor().colorWithAlphaComponent(0.3)
+    generator.generateArcAnimationFrames(animation)
+
 //    let generator = ArcGenerator()
 //    let animation = ArcAnimation.progressArcAnimation()
 //    animation.name = "progress"
