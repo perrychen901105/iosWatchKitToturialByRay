@@ -148,22 +148,22 @@ public class GroceryList: UIDocument {
 
   // MARK: Init
 
-  public init() {
-    reload()
-  }
-
-  public convenience init(useSample: Bool) {
-    self.init()
-
-    if useSample && sectionCount == 0 {
-      let store = RecipeStore()
-      let recipe = store.recipes[0]
-      for item in recipe.ingredients {
-        addItemToList(item)
-      }
-      sync()
-    }
-  }
+//  public init() {
+//    reload()
+//  }
+//
+//  public convenience init(useSample: Bool) {
+//    self.init()
+//
+//    if useSample && sectionCount == 0 {
+//      let store = RecipeStore()
+//      let recipe = store.recipes[0]
+//      for item in recipe.ingredients {
+//        addItemToList(item)
+//      }
+//      sync()
+//    }
+//  }
 
   // MARK: Private
 

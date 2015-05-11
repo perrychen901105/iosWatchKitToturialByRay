@@ -3,6 +3,7 @@ import WatchKit
 import SousChefKit
 
 class InitialInterfaceController: WKInterfaceController {
+  let fileManager = NSFileManager.defaultManager()
   override func handleUserActivity(userInfo: [NSObject : AnyObject]?) {
     println("Received a Handoff payload: \(userInfo)")
     if let version = userInfo![kHandoffVersionKey] as? String {
@@ -14,6 +15,30 @@ class InitialInterfaceController: WKInterfaceController {
     }
   }
   
+  override func willActivate() {
+    super.willActivate()
+    setupGroceryListGroupDoc()
+  }
+  
+  func createNewGroceryListDoc() {
+    let newGroceryListDoc = GroceryList(fileURL: GroceryListConfig.url)
+    newGroceryListDoc.saveToURL(newGroceryListDoc.fileURL, forSaveOperation: UIDocumentSaveOperation.ForCreating, completionHandler: { success in
+      if success {
+        println("createNewGroceryListDoc: success")
+      } else {
+        println("createNewGroceryListDoc: failed")
+      }
+    })
+  }
+  
+  func setupGroceryListGroupDoc() {
+    GroceryListConfig.url = GroceryListConfig.groupURL
+    // check for existing doc; create one if none exists
+    if !fileManager.fileExistsAtPath(GroceryListConfig.url.path!) {
+      println("setupGroceryListGroupDoc: create empty group doc")
+      createNewGroceryListDoc()
+    }
+  }
   // 1
   let recipeStore = RecipeStore()
   

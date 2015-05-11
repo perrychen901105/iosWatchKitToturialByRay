@@ -7,11 +7,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
   let recipeStore = RecipeStore()
-
+  let fileManager = NSFileManager.defaultManager()
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     configureAppearance()
     registerUserNotificationSettings()
     updateRecipesController()
+    setupGroceryListGroupDoc()
     return true
   }
   
@@ -33,6 +34,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //          }
 //      }
 //  }
+  
+  func createNewGroceryListDoc() {
+    let newGroceryListDoc = GroceryList(fileURL: GroceryListConfig.url)
+    newGroceryListDoc.saveToURL(newGroceryListDoc.fileURL, forSaveOperation: UIDocumentSaveOperation.ForCreating, completionHandler: { success in
+      if success {
+        println("createNewGroceryListDoc: success")
+      } else {
+        println("createNewGroceryListDoc: failed")
+      }
+    })
+  }
+  
+  func setupGroceryListGroupDoc() {
+    GroceryListConfig.url = GroceryListConfig.groupURL
+    // check for existing doc; create one if none exists
+    if !fileManager.fileExistsAtPath(GroceryListConfig.url.path!) {
+      println("setupGroceryListGroupDoc: create empty group doc")
+      createNewGroceryListDoc()
+    }
+  }
   
   func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]!) -> Void)!) {
     
