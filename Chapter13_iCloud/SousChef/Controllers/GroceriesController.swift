@@ -11,7 +11,7 @@ import SousChefKit
 
 class GroceriesController: UITableViewController {
 
-  lazy var groceryList = GroceryList()
+  lazy var groceryList = GroceryList(fileURL: GroceryListConfig.url) //GroceryList()
   var selectedIndexPaths = [NSIndexPath]()
 
   override func viewDidLoad() {
@@ -21,18 +21,42 @@ class GroceriesController: UITableViewController {
     navigationController?.tabBarItem.selectedImage = UIImage(named: "cart-full")
   }
 
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+    groceryList.closeWithCompletionHandler(nil)
+  }
+  
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
-    groceryList.reload()
-    let purchasedItems = self.groceryList.purchasedItems()
-    let uniqueIndexPaths = NSMutableSet()
-    purchasedItems.map({ (var anItem) -> Void in
-      if let indexPath = self.groceryList.indexPathForItem(anItem) {
-        uniqueIndexPaths.addObject(indexPath)
+//    groceryList.reload()
+    
+    groceryList.openWithCompletionHandler { (success) -> Void in
+      if success {
+        println("GroceriesController: opened groceryList")
+        let purchasedItems = self.groceryList.purchasedItems()
+        let uniqueIndexPaths = NSMutableSet()
+        purchasedItems.map({ (var anItem) -> Void in
+          if let indexPath = self.groceryList.indexPathForItem(anItem) {
+            uniqueIndexPaths.addObject(indexPath)
+          }
+        })
+        self.selectedIndexPaths = uniqueIndexPaths.allObjects as! [NSIndexPath]
+        self.tableView.reloadData()
+      } else {
+        println("GroceriesController: open groceryList failed")
       }
-    })
-    self.selectedIndexPaths = uniqueIndexPaths.allObjects as! [NSIndexPath]
+    }
     tableView.reloadData()
+    
+//    let purchasedItems = self.groceryList.purchasedItems()
+//    let uniqueIndexPaths = NSMutableSet()
+//    purchasedItems.map({ (var anItem) -> Void in
+//      if let indexPath = self.groceryList.indexPathForItem(anItem) {
+//        uniqueIndexPaths.addObject(indexPath)
+//      }
+//    })
+//    self.selectedIndexPaths = uniqueIndexPaths.allObjects as! [NSIndexPath]
+//    tableView.reloadData()
   }
 
   @IBAction func onAction(sender: AnyObject) {

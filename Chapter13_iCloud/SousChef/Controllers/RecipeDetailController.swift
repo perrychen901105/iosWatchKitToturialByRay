@@ -17,7 +17,7 @@ class RecipeDetailController: UIViewController {
 
   var recipe: Recipe?
   var initialController: RecipeDetailSelection = .Ingredients
-  lazy var groceryList = GroceryList()
+  lazy var groceryList = GroceryList(fileURL: GroceryListConfig.url)
   @IBOutlet weak var segmentedControl: UISegmentedControl!
 
   lazy var ingredientsController: RecipeIngredientsController! = {
@@ -53,9 +53,14 @@ class RecipeDetailController: UIViewController {
     updateSelectedController(initialController)
   }
 
-  func onPromptAddGroceries(sender: AnyObject) {
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+    groceryList.closeWithCompletionHandler(nil)
+  }
+  
+  func addGroceries() {
     let name = recipe?.name ?? "this recipe"
-
+    
     let alert = UIAlertController(title: "Grocery List", message: "Do you want to add all of the ingredients for \(name) to your grocery list?", preferredStyle: .Alert)
     // TODO: add all items to grocery list
     alert.addAction(UIAlertAction(title: "Add Items", style: .Default, handler: { _ in
@@ -68,6 +73,17 @@ class RecipeDetailController: UIViewController {
     }))
     alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
     presentViewController(alert, animated: true, completion: nil)
+  }
+  
+  func onPromptAddGroceries(sender: AnyObject) {
+    groceryList.openWithCompletionHandler { (success) -> Void in
+      if success {
+        println("RecipeDetailController: opened groceryList")
+        self.addGroceries()
+      } else {
+        println("RecipeDetailController: open groceryList failed")
+      }
+    }
   }
 
   @IBAction func onSegmentChange(sender: UISegmentedControl) {

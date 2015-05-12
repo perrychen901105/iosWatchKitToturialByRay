@@ -10,8 +10,8 @@ import Foundation
 
 public struct GroceryListConfig {
   // replace IDs with the ones you set up in target Capabilities
-  public static let groupID = "group.com.aodshop.souschef"
-  public static let iCloudID = "iCloud.com.aodshop.souschef"
+  public static let groupID = "group.com.aodshop.SousChef"
+  public static let iCloudID = "iCloud.com.aodshop.SousChef"
   public static let filename = "com.rw.souschef.groceries.json"
   public static var url = NSURL()
   public static var cloudURL = NSURL()
@@ -107,11 +107,15 @@ public class GroceryList: UIDocument {
     saveCurrentState()
   }
 
-  public func reload() {
-    list = syncedGroceryItems()
+  public func reload(contents: NSData) {
+//    list = syncedGroceryItems()
+//    table = updatedTable(list)
+  
+    list = syncedGroceryItems(contents)
     table = updatedTable(list)
+  
   }
-
+  
   // MARK: List mutability
 
   public func addItemToList(newItem: Ingredient) {
@@ -146,6 +150,49 @@ public class GroceryList: UIDocument {
     table = GroceryTable()
   }
 
+  // returns the groceries from the data contained in the saved document
+//  private func syncedGroceryItems() -> GroceryItems {
+//    if let data = NSData(contentsOfFile: savedGroceriesPath) {
+//      if let rawGroceries = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? GroceryItems {
+//        return rawGroceries
+//      }
+//    }
+//    return GroceryItems()
+//  }
+
+  private func syncedGroceryItems(contents: NSData) -> GroceryItems {
+    if contents.length > 0 {
+      if let rawGroceries = NSKeyedUnarchiver.unarchiveObjectWithData(contents) as? GroceryItems {
+        return rawGroceries
+      }
+    }
+    return GroceryItems()
+  }
+  
+  // saves the current groceries as data to the saved document
+  private func saveCurrentState() {
+//    let data = NSKeyedArchiver.archivedDataWithRootObject(list)
+//    if !NSFileManager.defaultManager().createFileAtPath(savedGroceriesPath, contents: data, attributes: nil) {
+//      println("error saving grocery list")
+//    }
+    saveToURL(fileURL, forSaveOperation: UIDocumentSaveOperation.ForOverwriting) { (success) -> Void in
+      if success {
+        println("saveCurrentState: document updated to container \(self.fileURL)")
+      }
+    }
+  }
+  
+  // simply passes its contents argument to reload(contents:), which sets the list and table properties.
+  public override func loadFromContents(contents: AnyObject, ofType typeName: String, error outError: NSErrorPointer) -> Bool {
+    reload(contents as! NSData)
+    return true
+  }
+  
+  // returns the grocery list as an instance of NSData, which the saveToURL()(_:forSaveOperation:completionHandler:) uses to save the document
+  public override func contentsForType(typeName: String, error outError: NSErrorPointer) -> AnyObject? {
+    return NSKeyedArchiver.archivedDataWithRootObject(list)
+  }
+  
   // MARK: Init
 
 //  public init() {
@@ -198,20 +245,6 @@ public class GroceryList: UIDocument {
     return table
   }
 
-  private func syncedGroceryItems() -> GroceryItems {
-    if let data = NSData(contentsOfFile: savedGroceriesPath) {
-      if let rawGroceries = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? GroceryItems {
-        return rawGroceries
-      }
-    }
-    return GroceryItems()
-  }
 
-  private func saveCurrentState() {
-    let data = NSKeyedArchiver.archivedDataWithRootObject(list)
-    if !NSFileManager.defaultManager().createFileAtPath(savedGroceriesPath, contents: data, attributes: nil) {
-      println("error saving grocery list")
-    }
-  }
 
 }

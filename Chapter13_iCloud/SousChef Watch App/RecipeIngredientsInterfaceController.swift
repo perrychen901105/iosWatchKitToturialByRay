@@ -26,7 +26,7 @@ import SousChefKit
 
 class RecipeIngredientsInterfaceController: WKInterfaceController {
   var recipe: Recipe?
-  let groceryList = GroceryList()
+  let groceryList = GroceryList(fileURL: GroceryListConfig.url)
 
   @IBOutlet weak var table: WKInterfaceTable!
   
@@ -53,7 +53,12 @@ class RecipeIngredientsInterfaceController: WKInterfaceController {
     }
   }
 
-  @IBAction func onAddToGrocery() {
+  override func didDeactivate() {
+    super.didDeactivate()
+    groceryList.closeWithCompletionHandler(nil)
+  }
+  
+  func addToGrocery() {
     if let items = self.recipe?.ingredients {
       for item in items {
         groceryList.addItemToList(item)
@@ -61,15 +66,21 @@ class RecipeIngredientsInterfaceController: WKInterfaceController {
       groceryList.sync()
     }
   }
+  
+  @IBAction func onAddToGrocery() {
+    groceryList.openWithCompletionHandler { (success) -> Void in
+      if success {
+        println("RecipeIngredientsIC: opened groceryList")
+        self.addToGrocery()
+      } else {
+        println("RecipeIngredientsIC: open groceryList failed")
+      }
+    }
+  }
 
   override func willActivate() {
     // This method is called when watch view controller is about to be visible to user
     super.willActivate()
-  }
-
-  override func didDeactivate() {
-    // This method is called when watch view controller is no longer visible
-    super.didDeactivate()
   }
 
 }
